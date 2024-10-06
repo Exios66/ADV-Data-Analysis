@@ -1,0 +1,248 @@
+/* File: styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    transition: background 0.3s, color 0.3s;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #4B6587;
+    transition: color 0.3s;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #3C3C3C;
+    transition: color 0.3s;
+}
+
+select, button, input[type="range"], input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+button {
+    background-color: #4B6587;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #34495E;
+}
+
+.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode h1 {
+    color: #f0a500;
+}
+
+.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode label {
+    color: #e0e0e0;
+}
+
+.dark-mode button {
+    background-color: #f0a500;
+    color: #121212;
+}
+
+button.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f0a500;
+    color: #121212;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.filters label {
+    font-weight: normal;
+}
+
+.analysis-results {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode .analysis-results {
+    background: #1f1f1f;
+    color: #e0e0e0;
+}
+
+button.analysis-toggle {
+    background-color: #4B6587;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.analysis-toggle:hover {
+    background-color: #34495E;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+.chart-container.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 20px;
+}
+
+button.fullscreen-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f0a500;
+    color: #121212;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.fullscreen-toggle:hover {
+    background-color: #e08e00;
+}
+
+.analysis-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+}
+
+.analysis-table th, .analysis-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.analysis-table th {
+    background-color: #4B6587;
+    color: white;
+}
+
+.dark-mode .analysis-table th {
+    background-color: #f0a500;
+}
+
+.analysis-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.dark-mode .analysis-table tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+.analysis-table tr:hover {
+    background-color: #ddd;
+}
+
+.dark-mode .analysis-table tr:hover {
+    background-color: #3a3a3a;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    background: #4B6587;
+    border: 2px solid #4B6587;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: #34495E;
+}
+
+.dark-mode input[type="range"]::-webkit-slider-thumb {
+    background: #f0a500;
+    border: 2px solid #f0a500;
+}
+
+.dark-mode input[type="range"]:hover::-webkit-slider-thumb {
+    background: #e08e00;
+}
