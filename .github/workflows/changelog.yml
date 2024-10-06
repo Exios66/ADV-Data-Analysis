@@ -1,0 +1,41 @@
+
+```yaml
+name: Changelog Update
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  update_changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install Dependencies
+      run: npm install -g conventional-changelog-cli
+
+    - name: Generate Changelog
+      run: conventional-changelog -p angular -i CHANGELOG.md -s
+
+    - name: Commit and Push Changelog
+      run: |
+        git config --local user.name "github-actions"
+        git config --local user.email "github-actions@github.com"
+        git add CHANGELOG.md
+        git commit -m "chore: update changelog"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
