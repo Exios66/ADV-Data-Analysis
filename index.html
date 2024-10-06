@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Data Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Advanced Data Visualization</h1>
+
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <div class="container">
+        <!-- File Upload -->
+        <label for="fileUpload">Upload CSV Data:</label>
+        <input type="file" id="fileUpload" accept=".csv" onchange="processCSV(event)">
+
+        <!-- Dropdown for Analysis Selection -->
+        <label for="analysisType">Select the Statistical Analysis:</label>
+        <select id="analysisType">
+            <option value="basic">Basic Descriptive Statistics</option>
+            <option value="skewness">Skewness and Kurtosis</option>
+            <option value="cronbach">Cronbach's Alpha (Reliability)</option>
+            <option value="correlation">Correlation Coefficient (Pearson's r)</option>
+            <option value="ttest">T-Test (Compare Two Groups)</option>
+            <option value="anova">ANOVA (Analysis of Variance)</option>
+            <option value="regression">Linear Regression Analysis</option>
+            <option value="chisquare">Chi-Square Test</option>
+            <option value="factoranalysis">Factor Analysis</option>
+            <option value="mannwhitney">Mann-Whitney U Test</option>
+            <option value="cluster">Cluster Analysis</option>
+        </select>
+
+        <!-- Dropdown for Chart Type Selection -->
+        <label for="chartType">Select Chart Type:</label>
+        <select id="chartType">
+            <option value="bar">Bar Chart</option>
+            <option value="line">Line Chart</option>
+            <option value="pie">Pie Chart</option>
+            <option value="doughnut">Doughnut Chart</option>
+            <option value="radar">Radar Chart</option>
+            <option value="polarArea">Polar Area Chart</option>
+            <option value="scatter">Scatter Plot</option>
+            <option value="bubble">Bubble Chart</option>
+        </select>
+
+        <!-- Dynamic Sliders for Group Data -->
+        <label for="group1">Enter Values for Group 1:</label>
+        <input type="range" id="group1" min="50" max="100" step="5" value="75" oninput="group1Value.value = this.value">
+        <input type="text" id="group1Value" value="75" oninput="group1.value = this.value">
+
+        <label for="group2" id="group2Label">Enter Values for Group 2:</label>
+        <input type="range" id="group2" min="50" max="100" step="5" value="75" oninput="group2Value.value = this.value">
+        <input type="text" id="group2Value" value="75" oninput="group2.value = this.value">
+
+        <button onclick="runAnalysis()">Run Analysis</button>
+
+        <!-- Checkboxes for dynamic filtering -->
+        <div class="filters">
+            <label><input type="checkbox" id="showGroup1" checked> Show Group 1</label>
+            <label><input type="checkbox" id="showGroup2" checked> Show Group 2</label>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="chartCanvas"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.1/math.min.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
