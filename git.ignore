@@ -1,0 +1,35 @@
+
+# .gitignore
+
+# Node modules and log files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+dist/
+build/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Environment and config
+.env
+
+# Cache files
+.cache/
+
+# Coverage reports
+coverage/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Deploy output
+docs/
